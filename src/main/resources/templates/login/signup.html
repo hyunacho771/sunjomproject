@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://webfontworld.github.io/seoulnamsan/SeoulNamsan.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2e4ea300fc.js" crossorigin="anonymous"></script>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style:none;background-color: DarkOrange;}
+        a{text-decoration:none; color:#333;font-family:'SeoulNamsan'}
+        .logo-box {
+            position: absolute;
+            top:-40px;
+            left: 40px;
+        }
+        .logo {
+            width: 50px;
+            height: 0px;
+        }
+        .logo2 {
+            width: 50px;
+            height: 0px;
+            position:absolute;
+            float:center;
+            margin: 100px 600px 500px;
+        }
+        .menu:after{display:block; content:''; clear:both;}
+        .menu > li{
+            position:relative;
+            float:left;
+            margin: 10 0 10px;
+            left:22%;
+        }
+        .menu > li > a{
+            display:block;
+            padding:0 50px;
+            background:#333;
+            height:40px;
+            line-height:40px;
+            color:#fff;
+            background-color: DarkOrange;
+            }
+        .menu > li :hover{
+             background: red;
+             transition-duration: 0.7s;
+        }
+        .menu > li:hover .depth_1 {
+            display:block;
+            }
+        .menu .depth_1{
+            display:none;
+            position:absolute;
+            left:0;
+            right:0;
+            text-align:center;
+        }
+        .menu .depth_1 a {
+            display:block;
+            padding:15px;
+            background:#666;
+            color:#fff;
+        }
+        .menu .depth_1 a:hover {
+          background-color: orange;
+          transition-duration:0.5s;
+        }
+        .main_text {
+            position: absolute;
+            font-family:'SeoulNamsan';
+            font-size: 50px;
+            font-weight: bolder;
+            top: 50%;
+            left: 50%;
+            transform: translate(0, 100px);
+            transition: all .5s ease;
+        }
+        .sub_text {
+            position: absolute;
+            font-family:'SeoulNamsan';
+            font-size: 30px;
+            top: 60%;
+            left: 50%;
+            transform: translate( -50%, -50% );
+        }
+        .icon{
+            position: absolute;
+            transform:translate(-50%,-50%);
+            right: 10%;
+            top:4%;
+        }
+        .icon2{
+             position: absolute;
+             transform:translate(-50%,-50%);
+             right: 15%;
+             top: 4%;
+         }
+        .img{
+            overflow:hidden;
+            height:1000;
+        }
+        .recent{
+            font-family:'SeoulNamsan';
+            position: absolute;
+            transform: translate(-50%,100%);
+            right:45%;
+            top: 130%;
+            background-color: white;
+        }
+         .box{
+            width: 150px;
+            height: 150px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+         .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .footer-dark {
+        padding:50px 0;
+        color:#f0f9ff;
+        background-color:#282d32;
+        }
+
+        .footer-dark h3 {
+        margin-top:0;
+        margin-bottom:12px;
+        font-weight:bold;
+        font-size:16px;
+        }
+
+        .footer-dark ul {
+        padding:0;
+        list-style:none;
+        line-height:1.6;
+        font-size:14px;
+        margin-bottom:0;
+        }
+
+        .footer-dark ul a {
+        color:inherit;
+        text-decoration:none;
+        opacity:0.6;
+        }
+
+        .footer-dark ul a:hover {
+        opacity:0.8;
+        }
+
+        @media (max-width:767px) {
+        .footer-dark .item:not(.social) {
+        text-align:center;
+        padding-bottom:20px;
+        }
+        }
+
+        .footer-dark .item.text {
+        margin-bottom:36px;
+        }
+
+        @media (max-width:767px) {
+        .footer-dark .item.text {
+        margin-bottom:0;
+        }
+        }
+
+        .footer-dark .item.text p {
+        opacity:0.6;
+        margin-bottom:0;
+        }
+
+        .footer-dark .item.social {
+        text-align:center;
+        }
+
+        @media (max-width:991px) {
+        .footer-dark .item.social {
+        text-align:center;
+        margin-top:20px;
+        }
+        }
+
+        .footer-dark .item.social > a {
+        font-size:20px;
+        width:36px;
+        height:36px;
+        line-height:36px;
+        display:inline-block;
+        text-align:center;
+        border-radius:50%;
+        box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+        margin:50 8px;
+        color:#fff;
+        opacity:0.75;
+        }
+
+        .footer-dark .item.social > a:hover {
+        opacity:0.9;
+        }
+
+        .footer-dark .copyright {
+        text-align:center;
+        padding-top:24px;
+        opacity:0.3;
+        font-size:13px;
+        margin-bottom:0;
+        }
+    </style>
+</head>
+<body style="background-color:#FAC87D;">
+<header>
+    <div class="logo-box">
+        <a href="/main">
+            <img id="npt" src="npt.png" style="display: block;" width="150px">
+        </a>
+    </div>
+    <ul class="menu">
+        <li>
+            <a th:href="@{'/main'}">운영진 및 교사진</a>
+            <ul class="depth_1">
+                <li><a href="/managers">운영진</a></li>
+                <li><a href="#">국어</a></li>
+                <li><a href="#">외국어</a></li>
+                <li><a href="#">수학</a></li>
+                <li><a href="#">사회</a></li>
+                <li><a href="#">과학</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">중학 교과</a>
+            <ul class="depth_1">
+                <li><a href="#">1학년</a></li>
+                <li><a href="#">2학년</a></li>
+                <li><a href="#">3학년</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">민사 수업 맛보기</a>
+            <ul class="depth_1">
+                <li><a href="#">국어</a></li>
+                <li><a href="#">외국어</a></li>
+                <li><a href="#">수학</a></li>
+                <li><a href="#">사회</a></li>
+                <li><a href="#">과학</a></li>
+                <li><a href="#">기타</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">민사뉴스</a>
+            <ul class="depth_1">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">졸업생과의 인터뷰</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="icon"><i class="fa-regular fa-user fa-3x"></i></div>
+    <div class="icon2"><i class="fa-solid fa-lock fa-3x"></i></div>
+</header>
+<img id="npt" src="/npt.png" style="display: block;float:center;margin: 30px 580px 0px;">
+<h1 style="text-align: center;margin:10px 50px 0px;font-family:'SeoulNamsan';">회원가입</h1></p>
+
+<form th:action="@{/user/signup}" method="post" style="text-align: center">
+    <input type="text" name="email" style="margin:10px;font-family:'SeoulNamsan';width:250px;height:30px;font-size:15px;text-align:center;background-color:orange;border:none;border-radius: 15px"placeholder="이메일 입력해주세요"><br>
+    <input type="password" name="password" style="font-family:'SeoulNamsan';width:250px;height:30px;font-size:15px;text-align:center;background-color:orange;margin:0px 0px;border:none;border-radius: 15px "placeholder="비밀번호"><br>
+    <button type="submit"style="margin:10px;">가입하기</button>
+</form>
+<footer>
+    <div class="footer-dark">
+        <div class="item social">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col item social">
+                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></i></a></div>
+            </div>
+            <p class="copyright">Company Name © 2018</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
